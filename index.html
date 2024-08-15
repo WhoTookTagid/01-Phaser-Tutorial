@@ -2,6 +2,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <style>
         html, body {
             margin: 0;
@@ -39,7 +42,6 @@
     {
         preload ()
         {
-            // Load images from the same directory as the HTML file
             this.load.image('sky', 'space3.png');
             this.load.image('logo', 'phaser3-logo.png');
             this.load.image('red', 'red.png');
