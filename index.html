@@ -63,6 +63,8 @@
             logo.setCollideWorldBounds(true);
 
             particles.startFollow(logo);
+            this.scale.displaySize.setAspectRatio( width/height );
+            this.scale.refresh();
         }
     }
 
