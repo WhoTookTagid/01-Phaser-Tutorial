@@ -64,7 +64,7 @@
     <div id="game-container"></div>
     <script>
 
-    const versionNumber = "0.0.13S"
+    const versionNumber = "0.0.13T"
 
     function goFullScreen() {
         const doc = window.document;
@@ -145,9 +145,7 @@
             },
             scale: {
                 mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_BOTH,
-                width: '100%',
-                height: '100%',
+                autoCenter: Phaser.Scale.CENTER_BOTH
             }
     };
 
@@ -155,10 +153,12 @@
 
     function resize() 
     {
-        // Resize the game scale and canvas dimensions
-        game.scale.resize(window.innerWidth, window.innerHeight);
-        game.canvas.style.width = window.innerWidth + 'px';
-        game.canvas.style.height = window.innerHeight + 'px';
+        if (game && game.canvas) 
+        {
+            game.scale.resize(window.innerWidth, window.innerHeight);
+            game.canvas.style.width = window.innerWidth + 'px';
+            game.canvas.style.height = window.innerHeight + 'px';
+        } 
     }
 
     // Initial resize to set up the game properly
