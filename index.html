@@ -47,6 +47,8 @@
     <div id="game-container"></div>
     <script>
 
+    const versionNumber = "0.0.12"
+
     function goFullScreen() {
         const doc = window.document;
         const docEl = doc.documentElement;
@@ -86,6 +88,14 @@
             logo.setCollideWorldBounds(true);
 
             particles.startFollow(logo);
+
+            // Add version number text
+            const versionText = this.add.text(10, 10, `Version: ${version}`, {
+                                font: "16px Arial",
+                                fill: "#ffffff"
+                            });
+            versionText.setScrollFactor(0);
+
             this.scale.displaySize.setAspectRatio( width/height );
             this.scale.refresh();
         }
