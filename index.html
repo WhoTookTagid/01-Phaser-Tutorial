@@ -51,7 +51,7 @@
     <div id="game-container"></div>
     <script>
 
-    const versionNumber = "0.0.13N"
+    const versionNumber = "0.0.13P"
 
     function goFullScreen() {
         const doc = window.document;
@@ -106,8 +106,8 @@
     const config = 
     {
             type: Phaser.AUTO,
-            width: window.innerWidth * window.devicePixelRatio,
-            height: window.innerHeight * window.devicePixelRatio,
+            width: window.innerWidth,
+            height: window.innerHeight,
             parent: 'game-container',
             scene: Example,
             physics: {
