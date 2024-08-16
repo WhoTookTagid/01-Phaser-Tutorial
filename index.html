@@ -43,19 +43,31 @@
             width: 100%;
             height: 100%;
         }
+        /* Optional: Lock orientation to portrait mode */
         @media screen and (orientation: landscape) {
-        body {
-            transform: rotate(90deg);
-            transform-origin: left top;
-            width: 100vh;
-            height: 100vw;
-            overflow: hidden;
+            body {
+                overflow: hidden;
+                transform: rotate(90deg);
+                transform-origin: left top;
+                width: 100vh;
+                height: 100vw;
+            }
+            #game-container {
+                width: 100vh;
+                height: 100vw;
+            }
         }
-        #game-container {
-            width: 100vh;
-            height: 100vw;
+        @media screen and (orientation: portrait) {
+            body {
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
+            }
+            #game-container {
+                width: 100vw;
+                height: 100vh;
+            }
         }
-    }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>
 </head>
@@ -64,30 +76,35 @@
     <div id="game-container"></div>
     <script>
 
-    const versionNumber = "0.0.13T"
+    const versionNumber = "0.0.13Tt"
 
-    function goFullScreen() {
+    function goFullScreen() 
+    {
         const doc = window.document;
         const docEl = doc.documentElement;
         const requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-        if (requestFullScreen) {
+        if (requestFullScreen) 
+        {
             requestFullScreen.call(docEl);
         }
     }
 
-    goFullScreen();
+    //goFullScreen();
  
     function lockOrientation() 
     {
-            if (window.screen.orientation && window.screen.orientation.lock) {
+            if (window.screen.orientation && window.screen.orientation.lock) 
+            {
                 window.screen.orientation.lock('portrait').catch(function(error) {
                     console.log('Orientation lock failed:', error);
                 });
-            } else if (screen.orientation && screen.orientation.lock) {
+            } else if (screen.orientation && screen.orientation.lock) 
+            {
                 screen.orientation.lock('portrait').catch(function(error) {
                     console.log('Orientation lock failed:', error);
                 });
-            } else {
+            } else 
+            {
                 console.log('Orientation lock not supported on this device.');
             }
     }
