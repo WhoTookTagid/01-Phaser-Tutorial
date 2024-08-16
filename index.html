@@ -93,7 +93,7 @@
             const versionText = this.add.text(10, 10, `Version: ${version}`, {
                                 font: "16px Arial",
                                 fill: "#ffffff"
-                            });
+            }).setDepth(1);
             versionText.setScrollFactor(0);
 
             this.scale.displaySize.setAspectRatio( width/height );
