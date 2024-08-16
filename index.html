@@ -43,6 +43,19 @@
             width: 100%;
             height: 100%;
         }
+        @media screen and (orientation: landscape) {
+        body {
+            transform: rotate(90deg);
+            transform-origin: left top;
+            width: 100vh;
+            height: 100vw;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vh;
+            height: 100vw;
+        }
+    }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>
 </head>
@@ -51,7 +64,7 @@
     <div id="game-container"></div>
     <script>
 
-    const versionNumber = "0.0.13Q"
+    const versionNumber = "0.0.13R"
 
     function goFullScreen() {
         const doc = window.document;
