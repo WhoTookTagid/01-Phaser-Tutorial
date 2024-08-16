@@ -64,7 +64,7 @@
     <div id="game-container"></div>
     <script>
 
-    const versionNumber = "0.0.13R"
+    const versionNumber = "0.0.13S"
 
     function goFullScreen() {
         const doc = window.document;
@@ -77,6 +77,20 @@
 
     goFullScreen();
  
+    function lockOrientation() 
+    {
+            if (window.screen.orientation && window.screen.orientation.lock) {
+                window.screen.orientation.lock('portrait').catch(function(error) {
+                    console.log('Orientation lock failed:', error);
+                });
+            } else if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock('portrait').catch(function(error) {
+                    console.log('Orientation lock failed:', error);
+                });
+            } else {
+                console.log('Orientation lock not supported on this device.');
+            }
+    }
 
     class Example extends Phaser.Scene
     {
@@ -152,6 +166,9 @@
 
     // Handle screen resize
     window.addEventListener('resize', resize);
+    window.addEventListener('load', () => {
+        lockOrientation();
+    });
 
     </script>
 
