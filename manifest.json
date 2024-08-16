@@ -1,16 +1,16 @@
 {
     "name": "T",
     "short_name": "T",
-    "start_url": "/index.html",
+    "start_url": "/",
     "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#5ebe76",
     "icons": [
       {
         "src": "/icons/icon-180x180.png",
         "type": "image/png",
         "sizes": "180x180"
       }
-    ],
-    "background_color": "#ffffff",
-    "theme_color": "#000000"
+    ]
   }
   
