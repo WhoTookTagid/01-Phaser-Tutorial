@@ -7,7 +7,7 @@
     "theme_color": "#5ebe76",
     "icons": [
         {
-            "src": "/icons/icon-180x180.png",
+            "src": "https://whotooktagid.github.io/01-Phaser-Tutorial/icons/icon-180x180.png",
             "sizes": "180x180",
             "type": "image/png"
         }

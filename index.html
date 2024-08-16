@@ -10,7 +10,7 @@
     <meta name="og:title" content="T">
     <meta name="og:type" content="website">
     <meta name="og:description" content="T happens.">
-    <meta name="og:image" content="/icons/icon-192x192.png">
+    <meta name="og:image" content="https://whotooktagid.github.io/01-Phaser-Tutorial/icons/icon-192x192.png">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="supported-color-schemes" content="">
     <meta name="color-scheme" content="#5ebe76">
@@ -48,11 +48,10 @@
 </head>
 
 <body>
-    <img src="https://whotooktagid.github.io/01-Phaser-Tutorial/icons/icon-180x180.png" alt="Test Icon">
     <div id="game-container"></div>
     <script>
 
-    const versionNumber = "0.0.13L"
+    const versionNumber = "0.0.13M"
 
     function goFullScreen() {
         const doc = window.document;
@@ -107,8 +106,8 @@
     const config = 
     {
             type: Phaser.AUTO,
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: window.innerWidth * window.devicePixelRatio,
+            height: window.innerHeight * window.devicePixelRatio,
             parent: 'game-container',
             scene: Example,
             physics: {
