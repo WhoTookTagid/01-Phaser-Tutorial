@@ -51,7 +51,7 @@
     <div id="game-container"></div>
     <script>
 
-    const versionNumber = "0.0.13P"
+    const versionNumber = "0.0.13Q"
 
     function goFullScreen() {
         const doc = window.document;
@@ -126,13 +126,19 @@
 
     const game = new Phaser.Game(config);
 
-     // Handle screen resize
-     window.addEventListener('resize', () => 
-        {
-            game.scale.resize(window.innerWidth, window.innerHeight);
-            game.canvas.style.width = window.innerWidth + 'px';
-            game.canvas.style.height = window.innerHeight + 'px';
-        });
+    function resize() 
+    {
+        // Resize the game scale and canvas dimensions
+        game.scale.resize(window.innerWidth, window.innerHeight);
+        game.canvas.style.width = window.innerWidth + 'px';
+        game.canvas.style.height = window.innerHeight + 'px';
+    }
+
+    // Initial resize to set up the game properly
+    resize();
+
+    // Handle screen resize
+    window.addEventListener('resize', resize);
 
     </script>
 
